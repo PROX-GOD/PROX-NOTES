@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+/* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 90%; /* Increased width */
+  height: 90%; /* Increased height */
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 75%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+  }
+}
+.highlight-image {
+  width: 100%; /* Set the width to 100% of its container */
+  height: auto; /* Let the height adjust according to the image aspect ratio */
+  max-width: 100%; /* Ensure the image doesn't exceed the container width */
+  border-radius: 10px; /* Adjust border-radius to match the highlight box */
+  object-fit: cover; /* Make the image cover the entire box */
+  object-position: center; /* Center the image within the box */
+}
+
+.moving-text {
+  background-color: navy;
+  color: black; /* Change text color to black */
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold; /* Make text bold */
+}
+
+.question-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.question-card h5 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.question-card p {
+  margin-bottom: 1rem;
+}
+
+.result {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Additional CSS for Quiz App */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.question-card p {
+  margin-bottom: 10px;
+}
+
+.question-box {
+  background-color: #4e342e;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.answer-box {
+  background-color: black; /* Updated answer box background color to black */
+  color: white; /* Set text color to white */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.answer-box:hover {
+  background-color: #333; /* Darken the background color on hover */
+}
+
+.result {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.correct-answer {
+  color: green;
+}
+
+.wrong-answer {
+  color: red;
+}
+
+/* Additional CSS for Notes section */
+#notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#notesOptions,
+#classOptions,
+#subjectOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note-option {
+  margin: 10px;
+  width: 250px;
+  height: 75px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-option button {
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.note-option button:hover {
+  background-color: #eee;
+}
+    </style>
+    <title>Responsive bottom navigation</title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">PROX NOTES</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#notes" class="nav__link">
+                            <i class='bx bx-note nav__icon'></i>
+                            <span class="nav__name">Notes</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#mcqs" class="nav__link">
+                            <i class='bx bx-file nav__icon'></i>
+                            <span class="nav__name">MCQ's</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#routine" class="nav__link">
+                            <i class='bx bx-calendar nav__icon'></i>
+                            <span class="nav__name">Routine</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#notice" class="nav__link">
+                           <i class='bx bx-notification nav__icon'></i>
+                            <span class="nav__name">Notice</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <img src="assets/img/perfil.png" alt="" class="nav__img">
+        </nav>
+    </header>
+
+    <main>
+<!--=============== HOME ===============-->
+<section class="container section" id="home">
+
+    <!-- Highlight Image Section -->
+<section class="container mt-4">
+    <div class="card highlight-card" style="background-image: url('/images/electricity_and_magnetism.jpeg')">
+        <div class="card-body">
+            <a href="highlight.html" class="highlight-link"></a>
+        </div>
+    </div>
+</section>
+<!-- Moving Text Box Section -->
+<section class="container mt-4">
+    <div class="card moving-text">
+        <div class="card-body">
+            <marquee behavior="scroll" direction="left" id="movingText"><strong>This is where the moving text goes...</strong></marquee>
+        </div>
+    </div>
+</section>
+        <!-- Question of the Day Section -->
+<section class="container mt-4 section">
+    <div class="card question-card">
+        <div class="card-body">
+            <div class="question-box" id="question">Loading...</div>
+            <div id="answers" class="answer-options"></div>
+            <p class="result" id="result"></p>
+        </div>
+    </div>
+</section>
+<!--=============== NOTES ===============-->
+<section class="container section section__height" id="notes">
+    <div id="notesOptions">
+        <!-- Initial options: Science and Management -->
+        <div class="note-option" id="scienceOption">
+            <button onclick="showClassOptions('Science')">Science</button>
+        </div>
+        <div class="note-option" id="managementOption">
+            <button onclick="showClassOptions('Management')">Management</button>
+        </div>
+    </div>
+    <div id="classOptions" style="display: none;">
+        <!-- Class options: Class 11 and Class 12 -->
+        <div class="note-option">
+            <button onclick="showSubjectOptions('Class 11')">Class 11</button>
+        </div>
+        <div class="note-option">
+            <button onclick="showSubjectOptions('Class 12')">Class 12</button>
+        </div>
+    </div>
+    <div id="subjectOptions" style="display: none;">
+        <!-- Subject options: English, Physics, Chemistry, Maths, Nepali, Computer -->
+        <div class="note-option">
+            <button>English</button>
+        </div>
+        <div class="note-option">
+            <button>Physics</button>
+        </div>
+        <div class="note-option">
+            <button>Chemistry</button>
+        </div>
+        <div class="note-option">
+            <button>Maths</button>
+        </div>
+        <div class="note-option">
+            <button>Nepali</button>
+        </div>
+        <div class="note-option">
+            <button>Computer</button>
+        </div>
+    </div>
+</section>
+
+        <!--=============== MCQS ===============-->
+        <section class="container section section__height" id="mcqs">
+            <!-- Add MCQ's content here if needed -->
+        </section>
+
+        <!--=============== ROUTINE ===============-->
+        <section class="container section section__height" id="routine">
+
+            <!-- Routine Section -->
+            <section class="container mt-4">
+                <div class="album py-5 bg-light">
+                    <div class="container">
+                        <div class="row">
+                            <!-- Subject 1 -->
+                            <div class="col-lg-6 col-md-12">
+                                <div class="card mb-4 shadow-sm"><img class="bd-placeholder-img" src="/images/routine.png" alt="Routine Image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">HIGHLIGHTS</h5>
+                                        <p class="card-text">This is the NEB exam routine for Grade 12. Dive into the details of this comprehensive schedule that outlines the exam dates and subjects. Plan your study strategy accordingly and prepare to excel in your examinations.</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <a href="#" onclick="downloadRoutine()" class="btn btn-sm btn-outline-secondary">Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add more col-lg-3 or col-md-6 as needed -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+<!--=============== NOTICE ===============-->
+<section class="container section section__height" id="notice">
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>CLASS 11&12 FORM SUBMITION</h2>
+                <h5>Notice description, 2 APR 2024</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Government Of Nepal i.e Education Ministry Has Increased The Form Submittion time..</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/main.js"></script>
+<script>
+let answered = false;
+
+function checkAnswer(answerBox, correctAnswer) {
+    // Check if user has already answered
+    if (answered) return;
+
+    // Mark the answer box based on correctness
+    if (answerBox.innerText === correctAnswer) {
+        answerBox.classList.add('correct-answer');
+    } else {
+        answerBox.classList.add('wrong-answer');
+        document.querySelector('.answers .answer-box:nth-child(1)').classList.add('correct-answer');
+    }
+
+    // Disable further clicks
+    answered = true;
+}
+
+async function fetchMathQuestion() {
+    const apiUrl = 'https://opentdb.com/api.php?amount=1&category=19';
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (data.results && data.results.length > 0) {
+            const question = data.results[0].question;
+            const correctAnswer = data.results[0].correct_answer;
+            const incorrectAnswers = data.results[0].incorrect_answers;
+            const allOptions = [...incorrectAnswers, correctAnswer];
+            const shuffledOptions = _getShuffledArray(allOptions);
+
+            document.getElementById('question').innerText = question;
+
+            const answersElement = document.getElementById('answers');
+
+            shuffledOptions.forEach((option, index) => {
+                const answerRow = document.createElement('div');
+                answerRow.classList.add('answer-row');
+                answersElement.appendChild(answerRow);
+
+                const answerElement = document.createElement('div');
+                answerElement.textContent = option;
+                answerElement.classList.add('answer-box');
+                answerElement.onclick = () => checkAnswer(answerElement, correctAnswer);
+
+                answerRow.appendChild(answerElement);
+            });
+        } else {
+            throw new Error('No question found');
+        }
+    } catch (error) {
+        console.error('Error fetching question:', error);
+    }
+}
+
+function _getShuffledArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
+}
+
+fetchMathQuestion();
+</script>
+<script>
+    function showRoutine() {
+        $('#routineModal').modal('show'); // Show the modal
+    }
+
+    function downloadRoutine(){
+        var link = document.createElement('a');
+        link.href = '/images/routine.jpeg';
+        link.download = 'routine.jpeg';
+        document.body.appendChild(link);
+        link.click(); // Simulate click
+        document.body.removeChild(link);
+    }
+</script>
+<script>
+    function showClassOptions(stream) {
+        document.getElementById('notesOptions').style.display = 'none';
+        document.getElementById('classOptions').style.display = 'block';
+    }
+
+    function showSubjectOptions(className) {
+        document.getElementById('classOptions').style.display = 'none';
+        document.getElementById('subjectOptions').style.display = 'block';
+    }
+</script>
+</body>
+</html>
