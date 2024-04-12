@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADE 12 NOTES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Include the toolbar using object tag -->
+<object type="text/html" data="toolbar.html" style="width:100%; height:300px;" ></object>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- End Bootstrap Navbar -->
+<section class="container mt-4">
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Subject 1 -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="bd-placeholder-img" src="/images/routine.png" alt="Routine Image">
+                        <div class="card-body">
+                            <h5 class="card-title">HIGHLIGHTS</h5>
+                            <p class="card-text">This is the NEB exam routine for Grade 12. Dive into the details of this comprehensive schedule that outlines the exam dates and subjects. Plan your study strategy accordingly and prepare to excel in your examinations.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="#" onclick="downloadRoutine()" class="btn btn-sm btn-outline-secondary">Download</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more col-lg-3 or col-md-6 as needed -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="routineModal" tabindex="-1" aria-labelledby="routineModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="routineModalLabel">NEB Exam Routine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img class="img-fluid" src="/images/routine.jpeg" alt="NEB Exam Routine">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showRoutine() {
+        $('#routineModal').modal('show'); // Show the modal
+    }
+
+    function downloadRoutine(){
+        var link = document.createElement('a');
+        link.href = '/images/routine.jpeg';
+        link.download = 'routine.jpeg';
+        document.body.appendChild(link);
+        link.click(); // Simulate click
+        document.body.removeChild(link);
+    }
+</script>
+    <!-- End Highlights Section -->
+
+    <!-- Subjects Section -->
+<section class="container mt-4">
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Physics -->
+                <div class="col-md-4">
+                    <a href="physics.html" style="text-decoration: none; color: inherit;">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" width="100%" height="225" src="/images/physics.png">
+                            <div class="card-body">
+                                <h5 class="card-title">PHYSICS</h5>
+                                <p class="card-text">This is the Physics notes section. Here you can read and download all Physics notes with lesson-wise breakdowns. Dive into each topic and enhance your understanding of Physics concepts to excel in your studies. Download the notes for convenient offline access and comprehensive revision.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="physics.html" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Chemistry -->
+                <div class="col-md-4">
+                    <a href="chemistry.html" style="text-decoration: none; color: inherit;">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" width="100%" height="225" src="/images/chemistry.png">
+                            <div class="card-body">
+                                <h5 class="card-title">CHEMISTRY</h5>
+                                <p class="card-text">This is the Chemistry notes section. Here you can read and download all Chemistry notes with lesson-wise breakdowns. Explore each topic and deepen your understanding of Chemistry concepts to excel in your studies. Download the notes for convenient offline access and thorough revision.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="chemistry.html" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Mathematics -->
+                <div class="col-md-4">
+                    <a href="maths.html" style="text-decoration: none; color: inherit;">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" width="100%" height="225" src="/images/maths.png">
+                            <div class="card-body">
+                                <h5 class="card-title">MATHS</h5>
+                                <p class="card-text">This is the Mathematics notes section. Here you can access and download all Mathematics notes, categorized by lesson for easy reference. Delve into each topic to strengthen your understanding of mathematical concepts and enhance your problem-solving skills. Download the notes for offline access and comprehensive revision.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="maths.html" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Computer -->
+                <div class="col-md-4">
+                    <a href="computer.html" style="text-decoration: none; color: inherit;">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" width="100%" height="225" src="/images/computer.png">
+                            <div class="card-body">
+                                <h5 class="card-title">COMPUTER</h5>
+                                <p class="card-text">This is the Computer Science notes section. Here you can explore and download all Computer Science notes, organized by lesson for clarity and convenience. Dive into each topic to deepen your understanding of computer science principles and improve your programming skills. Download the notes for offline access and thorough revision.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="computer.html" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- English -->
+                <div class="col-md-4">
+                    <a href="english.html" style="text-decoration: none; color: inherit;">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" width="100%" height="225" src="/images/english.png">
+                            <div class="card-body">
+                                <h5 class="card-title">ENGLISH</h5>
+                                <p class="card-text">This is the English notes section. Here you can find and download all English notes, segmented by lesson for easy navigation. Immerse yourself in each topic to enhance your language proficiency and literary comprehension. Download the notes for offline access and comprehensive revision.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="english.html" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Nepali -->
+                <div class="col-md-4">
+                    <a href="nepali.html" style="text-decoration: none; color: inherit;">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" width="100%" height="225" src="/images/nepali.png">
+                            <div class="card-body">
+                                <h5 class="card-title">NEPALI</h5>
+                                <p class="card-text">This is the Nepali notes section. Here you can access and download all Nepali notes, categorized by lesson for clear understanding. Explore each topic to deepen your knowledge of Nepali language and literature. Download the notes for offline access and thorough revision.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="nepali.html" class="btn btn-sm btn-outline-secondary">View</a>
+                                        <a href="#" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Subjects Section -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
