@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        
+<!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Animation Library - Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>NOTES BY PRESHAK</title>
+</head>
+<body>
+    <!--=============== HEADER ===============-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">PROX NOTES</a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home-alt nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#notes" class="nav__link">
+                            <i class='bx bx-note nav__icon'></i>
+                            <span class="nav__name">Notes</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#mcqs" class="nav__link">
+                            <i class='bx bx-file nav__icon'></i>
+                            <span class="nav__name">MCQ's</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#routine" class="nav__link">
+                            <i class='bx bx-calendar nav__icon'></i>
+                            <span class="nav__name">Routine</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#notice" class="nav__link">
+                            <i class='bx bx-notification nav__icon'></i>
+                            <span class="nav__name">Notice</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <img src="/images/logoo.png" alt="" class="nav__img">
+        </nav>
+    </header>
+
+    <main>
+<!--=============== HOME ===============-->
+    <section class="container section" id="home">
+
+<!-- Highlight Image Section -->
+<section class="container mt-4">
+    <div class="card highlight-card">
+        <a href="https://www.facebook.com/H4CKERRRRRRRRRR" class="card-body"></a>
+    </div>
+</section>
+<!-- Moving Text Box Section -->
+<section class="container mt-4">
+    <div class="card moving-text">
+        <div class="card-body">
+            <marquee behavior="scroll" direction="left" id="movingText"><strong>This is where the moving text goes...</strong></marquee>
+        </div>
+    </div>
+</section>
+<!-- Question of the Day Section -->
+<section class="container mt-4 section">
+    <div class="card question-card">
+        <div class="card-body">
+            <div class="qod" id="heading">MCQ's</div> <!-- Added the qod class here -->
+            <div class="marks" id="mar">1MARK</div>
+            <div class="question-box" id="question">Loading...</div>
+            <div id="answers" class="answer-options"></div>
+            <p class="result" id="result"></p>
+        </div>
+    </div>
+</section>
+<!--=============== NOTES ===============-->
+<section class="container section section__height" id="notes">
+    <div id="notesOptions">
+        <!-- Initial options: Science and Management -->
+        <div class="note-option" id="scienceOption">
+            <button onclick="showClassOptions('Science')">Science</button>
+        </div>
+        <div class="note-option" id="managementOption">
+            <button onclick="showClassOptions('Management')">Management</button>
+        </div>
+    </div>
+    <div id="classOptions" style="display: none;">
+        <!-- Class options: Class 11 and Class 12 -->
+        <div class="note-option">
+            <button onclick="showSubjectOptions('Class 11')">Class 11</button>
+        </div>
+        <div class="note-option">
+            <button onclick="showSubjectOptions('Class 12')">Class 12</button>
+        </div>
+    </div>
+    <div id="subjectOptions" style="display: none;">
+        <!-- Subject options: English, Physics, Chemistry, Maths, Nepali, Computer -->
+        <div class="note-option">
+            <button>English</button>
+        </div>
+        <div class="note-option">
+            <button>Physics</button>
+        </div>
+        <div class="note-option">
+            <button>Chemistry</button>
+        </div>
+        <div class="note-option">
+            <button>Maths</button>
+        </div>
+        <div class="note-option">
+            <button>Nepali</button>
+        </div>
+        <div class="note-option">
+            <button>Computer</button>
+        </div>
+    </div>
+</section>
+
+        <!--=============== MCQS ===============-->
+        <section class="container section section__height" id="mcqs">
+            <!-- Add MCQ's content here if needed -->
+        </section>
+
+<!--=============== ROUTINE ===============-->
+<section class="container section section__height" id="routine">
+
+    <!-- Routine Section -->
+    <section class="container mt-4">
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Subject 1 -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="bd-placeholder-img" src="/images/routine.png" alt="Routine Image">
+                            <div class="card-body">
+                                <h5 class="card-title">HIGHLIGHTS</h5>
+                                <p class="card-text">This is the NEB exam routine for Grade 12.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="#" onclick="downloadRoutine()" class="btn btn-sm btn-outline-secondary">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more col-lg-3 or col-md-6 as needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<!--=============== NOTICE ===============-->
+<section class="container section section__height" id="notice">
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>CLASS 11&12 FORM SUBMISSION</h2>
+                <h5>Notice description, 2 APR 2024</h5>
+                <img src="/images/notice.jpeg" alt="Real Image">
+                <p>Government Of Nepal i.e Education Ministry Has Increased The Form Submission time..</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--=============== MAIN JS ===============-->
+<script src="assets/js/main.js"></script>
+<script>
+    let answered = false;
+
+    function checkAnswer(answerBox, correctAnswer) {
+        // Check if user has already answered
+        if (answered) return;
+
+        // Mark the answer box based on correctness
+        if (answerBox.innerText === correctAnswer) {
+            answerBox.classList.add('correct-answer');
+        } else {
+            answerBox.classList.add('wrong-answer');
+            document.querySelector('.answers .answer-box:nth-child(1)').classList.add('correct-answer');
+        }
+
+        // Disable further clicks
+        answered = true;
+    }
+   // Array containing 20 random sayings in English and Nepali
+const sayings = [
+    // English sayings
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+    "Your time is limited, don't waste it living someone else's life. - Steve Jobs",
+    "Life is what happens when you're busy making other plans. - John Lennon",
+    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    "Strive not to be a success, but rather to be of value. - Albert Einstein",
+    "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
+    "The only limit to our realization of tomorrow will be our doubts of today. - Franklin D. Roosevelt",
+    "Life is like riding a bicycle. To keep your balance, you must keep moving. - Albert Einstein",
+    "You miss 100% of the shots you don't take. - Wayne Gretzky",
+    "The best time to plant a tree was 20 years ago. The second best time is now. - Chinese Proverb",
+    "The only impossible journey is the one you never begin. - Tony Robbins",
+    "It does not matter how slowly you go as long as you do not stop. - Confucius",
+    "You are never too old to set another goal or to dream a new dream. - C.S. Lewis",
+    "If you want to lift yourself up, lift up someone else. - Booker T. Washington",
+    "The way to get started is to quit talking and begin doing. - Walt Disney",
+    "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+    "Believe you can and you're halfway there. - Theodore Roosevelt",
+    "It always seems impossible until it's done. - Nelson Mandela",
+    "Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman",
+    
+    // Nepali sayings
+    "धेरै गरी पूजी धर्म र शिक्षा, धेरै गरी ताजा पालिका। - भगवती भट्टराई",
+    "समय यस्तो छ कि, कसैले जुनसुकै कुरा सिक्दा, हामी सबै कुरा भोग्दै। - लक्ष्मी प्रसाद देवकोटा",
+    "जीवनमा सफलता प्राप्त गर्नको निम्ति उत्सुकता र उत्साह अत्यन्त आवश्यक छ। - स्वामी विवेकानन्द",
+    "अवस्था यस्तो छ, जस्तै हाम्रो व्यक्तित्व छ। - महाकवि लक्ष्मी प्रसाद देवकोटा",
+    "सफलतामा जानकारीले महत्त्वपूर्ण भूमिका खेल्दैन, योजनाले खेल्दछ। - विन्स्टन चर्चिल",
+    "सपनामा कहिल्यै सिम्ती नजाने व्यक्ति, वास्तविकतामा सिम्ती जाने होइन। - राजेश्वर भट्टराई"
+];
+
+// Function to select a random saying from the array
+function getRandomSaying() {
+    return sayings[Math.floor(Math.random() * sayings.length)];
+}
+
+// Update the moving text with a random saying when the page is loaded
+document.addEventListener("DOMContentLoaded", function() {
+    const saying = getRandomSaying();
+    document.getElementById('movingText').innerText = saying;
+    document.getElementById('movingText').style.fontWeight = 'bold';
+});
+    
+</script>
+<script>
+    function showRoutine() {
+        $('#routineModal').modal('show'); // Show the modal
+    }
+
+    function downloadRoutine(){
+        var link = document.createElement('a');
+        link.href = '/images/routine.jpeg';
+        link.download = 'routine.jpeg';
+        document.body.appendChild(link);
+        link.click(); // Simulate click
+        document.body.removeChild(link);
+    }
+</script>
+    <script>
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Function to check the selected answer
+        function checkAnswer(selectedAnswer, correctAnswer) {
+            const resultElement = document.getElementById('result');
+            console.log('Selected:', selectedAnswer);
+            console.log('Correct:', correctAnswer);
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = 'Congratulations! Your answer is correct!';
+                resultElement.classList.add('correct-answer');
+            } else {
+                resultElement.textContent = `Sorry, the correct answer is: ${correctAnswer}`;
+                resultElement.classList.add('wrong-answer');
+            }
+            // Disable further clicks
+            document.querySelectorAll('.answer-box').forEach(answerBox => {
+                answerBox.onclick = null;
+            });
+        }
+
+        // Function to fetch a random trivia question from the Open Trivia Database API for Mathematics category
+        async function fetchMathQuestion() {
+            const apiUrl = 'https://opentdb.com/api.php?amount=1&category=19'; // Category ID for Mathematics
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                console.log(data); // Log the fetched data
+                if (data.results && data.results.length > 0) {
+                    const question = data.results[0].question;
+                    const correctAnswer = data.results[0].correct_answer;
+                    const incorrectAnswers = data.results[0].incorrect_answers;
+                    console.log(question, correctAnswer, incorrectAnswers); // Log the question, correct answer, and incorrect answers
+                    // Replace HTML encoded characters (e.g., &amp;) with their actual characters
+                    const decodedQuestion = new DOMParser().parseFromString(question, 'text/html').body.textContent;
+                    const questionElement = document.getElementById('question');
+                    const answersElement = document.getElementById('answers');
+                    const allOptions = [...incorrectAnswers, correctAnswer];
+                    const shuffledOptions = shuffleArray(allOptions);
+                    questionElement.textContent = decodedQuestion;
+                    shuffledOptions.forEach(option => {
+                        const answerElement = document.createElement('div');
+                        answerElement.textContent = option;
+                        answerElement.classList.add('answer-box');
+                        answerElement.onclick = () => checkAnswer(option, correctAnswer);
+                        answersElement.appendChild(answerElement);
+                    });
+                } else {
+                    throw new Error('No question found');
+                }
+            } catch (error) {
+                console.error('Error fetching question:', error);
+            }
+        }
+
+        // Call the function to fetch a random Mathematics question when the page loads
+        fetchMathQuestion();
+    </script>
+    <script>
+    shuffledOptions.forEach((option, index) => {
+    if (index % 2 === 0) {
+        const answerRow = document.createElement('div');
+        answerRow.classList.add('answer-row');
+        answersElement.appendChild(answerRow);
+    }
+    const answerRow = document.querySelector('.answer-row:last-child');
+    const answerElement = document.createElement('div');
+    answerElement.textContent = option;
+    answerElement.classList.add('answer-box');
+    answerElement.onclick = () => checkAnswer(option, correctAnswer);
+    answerRow.appendChild(answerElement);
+});
+</script>
+<script>
+// Function to show class options based on selected stream
+function showClassOptions(stream) {
+    document.getElementById('notesOptions').style.display = 'none'; // Hide initial options
+    document.getElementById('classOptions').style.display = 'block'; // Show class options
+}
+
+// Function to show subject options based on selected class
+function showSubjectOptions(className) {
+    document.getElementById('classOptions').style.display = 'none'; // Hide class options
+    document.getElementById('subjectOptions').style.display = 'block'; // Show subject options
+}
+</script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!--=============== MAIN JS ===============-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
