@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question of the Day</title>
+    <style>
+        /* Custom CSS styles */
+        .answer-box {
+            cursor: pointer;
+            margin-bottom: 5px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            color: black; /* Answer text color */
+        }
+
+        .answer-box:hover {
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.5); /* Translucent black */
+            color: white;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .question-card {
+            padding: 20px;
+        }
+
+        .result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .correct-answer {
+            background-color: green;
+        }
+
+        .wrong-answer {
+            background-color: red;
+        }
+
+        /* Adjust section height */
+        .section {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <section class="container mt-4 section">
+        <div class="card question-card">
+            <div class="card-body">
+                <h5 class="card-title">Question of the Day</h5>
+                <p class="card-text" id="question">Loading...</p>
+                <div id="answers"></div>
+                <p class="result" id="result"></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Function to shuffle an array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Function to check the selected answer
+        function checkAnswer(selectedAnswer, correctAnswer) {
+            const resultElement = document.getElementById('result');
+            console.log('Selected:', selectedAnswer);
+            console.log('Correct:', correctAnswer);
+            if (selectedAnswer === correctAnswer) {
+                resultElement.textContent = 'Congratulations! Your answer is correct!';
+                resultElement.classList.add('correct-answer');
+            } else {
+                resultElement.textContent = `Sorry, the correct answer is: ${correctAnswer}`;
+                resultElement.classList.add('wrong-answer');
+            }
+            // Disable further clicks
+            document.querySelectorAll('.answer-box').forEach(answerBox => {
+                answerBox.onclick = null;
+            });
+        }
+
+        // Function to fetch a random trivia question from the Open Trivia Database API for Mathematics category
+        async function fetchMathQuestion() {
+            const apiUrl = 'https://opentdb.com/api.php?amount=1&category=19'; // Category ID for Mathematics
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                console.log(data); // Log the fetched data
+                if (data.results && data.results.length > 0) {
+                    const question = data.results[0].question;
+                    const correctAnswer = data.results[0].correct_answer;
+                    const incorrectAnswers = data.results[0].incorrect_answers;
+                    console.log(question, correctAnswer, incorrectAnswers); // Log the question, correct answer, and incorrect answers
+                    // Replace HTML encoded characters (e.g., &amp;) with their actual characters
+                    const decodedQuestion = new DOMParser().parseFromString(question, 'text/html').body.textContent;
+                    const questionElement = document.getElementById('question');
+                    const answersElement = document.getElementById('answers');
+                    const allOptions = [...incorrectAnswers, correctAnswer];
+                    const shuffledOptions = shuffleArray(allOptions);
+                    questionElement.textContent = decodedQuestion;
+                    shuffledOptions.forEach(option => {
+                        const answerElement = document.createElement('div');
+                        answerElement.textContent = option;
+                        answerElement.classList.add('answer-box');
+                        answerElement.onclick = () => checkAnswer(option, correctAnswer);
+                        answersElement.appendChild(answerElement);
+                    });
+                } else {
+                    throw new Error('No question found');
+                }
+            } catch (error) {
+                console.error('Error fetching question:', error);
+            }
+        }
+
+        // Call the function to fetch a random Mathematics question when the page loads
+        fetchMathQuestion();
+    </script>
+</body>
+</html>
